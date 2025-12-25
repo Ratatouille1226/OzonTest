@@ -1,0 +1,81 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 18px;
+  background: #141418;
+  border: 1px solid #2b2b2f;
+  border-radius: 12px;
+
+  color: #e3e3ec;
+  list-style: none;
+
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.item:hover {
+  background: #1a1a1f;
+  border-color: #3a3a45;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.amount {
+  font-weight: 700;
+  font-size: 16px;
+  color: #6e7bff;
+}
+
+.category {
+  font-size: 14px;
+  color: #c7c7d2;
+}
+
+.description {
+  font-size: 14px;
+  color: #d7d7e0;
+}
+
+.date {
+  font-size: 13px;
+  color: #9b9baa;
+  text-align: right;
+}
+
+.deleteBtn {
+  background: #26262c;
+  color: #ff6b6b;
+  border: none;
+  width: 32px;
+  height: 32px;
+
+  border-radius: 8px;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.deleteBtn:hover {
+  background: #332b2b;
+}
+
+.deleteBtn:active {
+  transform: scale(0.92);
+}
+
+.expense {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

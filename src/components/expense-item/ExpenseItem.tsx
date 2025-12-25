@@ -1,5 +1,6 @@
 import { CATEGORIES } from "../../constants/categories";
 import { type Expense } from "../../types/expense";
+import styles from "./ExpenseItem.module.css";
 
 interface ExpenseItemProps {
   expense: Expense;
@@ -8,21 +9,21 @@ interface ExpenseItemProps {
 
 export const ExpenseItem = ({ expense, onDelete }: ExpenseItemProps) => {
   const categoryName = CATEGORIES.find((c) => c.id === expense.category)?.name;
-
   const formattedDate = new Date(expense.date).toLocaleDateString("ru-RU");
-
   const formattedAmount = expense.amount.toLocaleString("ru-RU") + " ₽";
 
   return (
-    <li>
-      <div>
-        <strong>{formattedAmount}</strong>
-        <span>{categoryName}</span>
-        <span>{expense.description}</span>
-        <span>{formattedDate}</span>
+    <li className={styles.item}>
+      <div className={styles.info}>
+        <span className={styles.amount}>{formattedAmount}</span>
+        <span className={styles.category}>{categoryName}</span>
+        <span className={styles.description}>{expense.description}</span>
+        <span className={styles.date}>{formattedDate}</span>
       </div>
 
-      <button onClick={() => onDelete(expense.id)}>×</button>
+      <button className={styles.deleteBtn} onClick={() => onDelete(expense.id)}>
+        ×
+      </button>
     </li>
   );
 };

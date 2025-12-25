@@ -1,5 +1,6 @@
 import { ExpenseForm, ExpenseList, Summary } from "./components";
 import { useLocalStorage } from "./hooks/useLocalStorage";
+import "./app.css";
 import type { Expense } from "./types/expense";
 
 function App() {

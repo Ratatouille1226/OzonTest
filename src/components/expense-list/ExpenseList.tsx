@@ -1,5 +1,6 @@
 import { ExpenseItem } from "../expense-item/ExpenseItem";
 import { type Expense } from "../../types/expense";
+import styles from "../expense-item/ExpenseItem.module.css";
 
 interface ExpenseListProps {
   expenses: Expense[];
@@ -16,10 +17,10 @@ export const ExpenseList = ({ expenses, onDelete }: ExpenseListProps) => {
   );
 
   return (
-    <ul>
+    <div className={styles.expense}>
       {sorted.map((expense) => (
         <ExpenseItem key={expense.id} expense={expense} onDelete={onDelete} />
       ))}
-    </ul>
+    </div>
   );
 };

@@ -1,5 +1,5 @@
 import { type FieldError, type UseFormRegister } from "react-hook-form";
-import styles from "./amount.module.css";
+import styles from "../../ExpenseForm.module.css";
 import { type FormValues } from "../../../../types/formValues";
 
 interface Props {
@@ -14,6 +14,7 @@ export const Amount = ({ register, error }: Props) => (
       id="amount-input"
       type="number"
       placeholder="Введите сумму"
+      className={error ? styles.fieldError : ""}
       {...register("amount", {
         required: "Введите сумму",
         min: { value: 1, message: "Сумма должна быть больше 0" },
